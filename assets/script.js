@@ -91,7 +91,7 @@ const slides = [
     bg: 'images\hero.avif', // Replace with your actual image path
     hello: 'Hello',
     name: "I'm Masha",
-    text: "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit.",
+    text: "I photograph very instinctively. I see how it is taken like that I do not\ follow certain styles, philosophies or teachers.",
     btnText: "Get a Quote",
     email: "hello.alime@gmail.com"
   },
@@ -99,43 +99,122 @@ const slides = [
     bg: 'images\hero1.avif', // Replace with your actual image path
     hello: 'Hello',
     name: "I'm Daniel",
-    text: "Praesent commodo cursus magna,\nac consectetur arcu vehicula ut.",
+    text: "I photograph very instinctively. I see how it is taken like that I do not\ follow certain styles, philosophies or teachers.",
     btnText: "Get a Quote",
     email: "daniel@example.com"
   }
 ];
 
+// let currentSlide = 0;
+
+// const slideBg = document.getElementById('slideBg');
+// const textContainer = document.getElementById('textContent');
+// const leftContainer = document.querySelector('.left-container');
+// const prevBtn = document.getElementById('prevBtn');
+// const nextBtn = document.getElementById('nextBtn');
+
+// function updateSlide(index, direction = 'next') {
+//   const slide = slides[index];
+
+//   // set bg
+//   slideBg.style.backgroundImage = `url('${slide.bg}')`;
+
+//   // Animate text container
+//   leftContainer.classList.remove('slide-in');
+
+//   if (direction === 'next') {
+//     leftContainer.classList.add('slide-out');
+//   } else {
+//     leftContainer.classList.add('slide-in-reverse');
+//   }
+
+//   setTimeout(() => {
+
+//     textContainer.innerHTML = `
+//       <h1>${slide.hello}</h1>
+//       <h2>${slide.name}</h2>
+//       <p>${slide.text.split('\n').join('<br>')}</p>
+//       <div class="btn-email">
+//         <button class="btn">${slide.btnText}</button>
+//         <a href="mailto:${slide.email}" class="email-link">${slide.email}</a>
+//       </div>
+//     `;
+
+//     leftContainer.classList.remove('slide-out', 'slide-in-reverse');
+//     void leftContainer.offsetWidth; // Trigger reflow
+//     leftContainer.classList.add('slide-in');
+
+//   })
+
+// }
+
+// prevBtn.addEventListener('click', () => {
+//   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+//   updateSlide(currentSlide);
+// });
+
+// nextBtn.addEventListener('click', () => {
+//   currentSlide = (currentSlide + 1) % slides.length;
+//   updateSlide(currentSlide);
+// });
+
+// // Initialize
+// updateSlide(currentSlide);
+
+
+
 let currentSlide = 0;
 
 const slideBg = document.getElementById('slideBg');
 const textContainer = document.getElementById('textContent');
+const leftContainer = document.querySelector('.left-container');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-function updateSlide(index) {
+function updateSlide(index, direction = 'next') {
   const slide = slides[index];
+
+  // Set background
   slideBg.style.backgroundImage = `url('${slide.bg}')`;
 
-  textContainer.innerHTML = `
-    <h1>${slide.hello}</h1>
-    <h2>${slide.name}</h2>
-    <p>${slide.text.split('\n').join('<br>')}</p>
-    <div class="btn-email">
-      <button class="btn">${slide.btnText}</button>
-      <a href="mailto:${slide.email}" class="email-link">${slide.email}</a>
-    </div>
-  `;
+  // Animate text container
+  leftContainer.classList.remove('slide-in');
+
+  if (direction === 'next') {
+    leftContainer.classList.add('slide-out');
+  } else {
+    leftContainer.classList.add('slide-in-reverse');
+  }
+
+  setTimeout(() => {
+    // Update content
+    textContainer.innerHTML = `
+      <h1 class="hello-text">${slide.hello}</h1>
+      <h2 class="name-text">${slide.name}</h2>
+      <p>${slide.text.split('\n').join('<br>')}</p>
+      <div class="btn-email">
+        <button class="btn">${slide.btnText}</button>
+        <a href="mailto:${slide.email}" class="email-link">${slide.email}</a>
+      </div>
+    `;
+
+    // Reset animation
+    leftContainer.classList.remove('slide-out', 'slide-in-reverse');
+    void leftContainer.offsetWidth; // Trigger reflow
+    leftContainer.classList.add('slide-in');
+  }, 300);
 }
 
+// Initial load
+updateSlide(currentSlide);
+
+// Navigation buttons
 prevBtn.addEventListener('click', () => {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  updateSlide(currentSlide);
+  updateSlide(currentSlide, 'prev');
 });
 
 nextBtn.addEventListener('click', () => {
   currentSlide = (currentSlide + 1) % slides.length;
-  updateSlide(currentSlide);
+  updateSlide(currentSlide, 'next');
 });
-
-// Initialize
-updateSlide(currentSlide);

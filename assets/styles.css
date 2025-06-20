@@ -362,6 +362,16 @@ body {
     justify-content: center;
 }
 
+.slider-wrapper{
+    .slider-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2;     }
+}
 /* Background Image */
 .slide-bg {
     position: absolute;
@@ -376,20 +386,18 @@ body {
 }
 
 /* Text Content */
-.slider-content {
+.text-container {
     position: relative;
     max-width: 800px;
+    margin-right: 700px;
     padding: 0 100px;
     color: white;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    
 }
 
 .text-container h1 {
-    font-size: 3rem;
+    font-size: 6rem;
     margin-bottom: 10px;
 }
 
@@ -399,15 +407,44 @@ body {
     
 }
 .text-container h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 6rem;
+    margin-bottom: 10px;
 }
 
 .text-container p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
+    line-height: 30px;
 }
 
+/* Gradient Text Styling */
+
+.hello-text {
+    font-weight: 900;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to bottom, #fc8931, #ffb57c);
+    /* Dark Orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name-text {
+    font-weight: 700;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to bottom, #fdc775, #ff8a00);
+    /* Lighter Orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+
+/* Add class for sliding */
+.left-container.slide-out {
+    transform: translateX(-100%);
+}
+
+.left-container.slide-in {
+    transform: translateX(0); }
+
+    
 .text-container .btn-email {
     display: flex;
     gap: 20px;
@@ -415,19 +452,26 @@ body {
 }
 
 .btn {
-    padding: 12px 24px;
-    border: none;
-    background-color: crimson;
+    padding: 16px 28px;
+    background-color: transparent;
+    border: 1px solid crimson;
+    border-color: crimson;
     color: white;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 50px;
 }
 
 .email-link {
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
     font-weight: bold;
+    font-style: italic;
+
 }
 
 /* Nav Buttons */
@@ -454,6 +498,12 @@ body {
 .prev {
     left: 40px;
 }
-
+.prev:hover{
+    background-color: crimson;
+}
 .next {
     right: 40px; }
+
+.next:hover {
+    background-color: crimson;   
+}
