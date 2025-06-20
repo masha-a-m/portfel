@@ -1,3 +1,23 @@
+// loader
+  window.addEventListener("load", function () {
+    const loader = document.getElementById('pageLoader');
+    loader.style.opacity = "0";
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 600); // Match with CSS transition time
+  });
+
+// Fake delay for testing (remove when done)
+window.addEventListener("DOMContentLoaded", function () {
+  setTimeout(() => {
+    const loader = document.getElementById('pageLoader');
+    loader.style.opacity = "0";
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 600);
+  }, 3000); // Show loader for 3 seconds
+});
+
 // Toggle search overlay
 const searchIcon = document.getElementById('searchIcon');
 const searchOverlay = document.querySelector('.search-overlay');
@@ -190,5 +210,28 @@ tabs.forEach(tab => {
       gallery.style.opacity = '1';
       gallery.style.pointerEvents = 'auto';
     }, 300);
+  });
+});
+
+
+
+// back to top
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  backToTop.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 });

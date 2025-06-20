@@ -10,6 +10,64 @@ body {
     position: relative;
 }
 
+/* Loader Background */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    /* or your background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Loader Dots */
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 8px;
+    background-color: crimson;
+    border-radius: 50%;
+    opacity: 1;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+/* Delay each dot's animation */
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0s;
+}
+
+/* Keyframes for bouncing effect */
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1.0);
+    } 
+}
+
+
+
 /* Fullscreen Background Image */
 .hero-section {
     /* background-image: url('/images/hero.avif'); */
@@ -767,3 +825,246 @@ body {
         padding: 10px 20px;
         font-size: 12px;
     } }
+
+
+
+
+/* Instagram Section */
+.instagram-section {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.insta-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.insta-handle {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 40px;
+    display: block;
+}
+
+/* Instagram Feed Row */
+.instagram-feed {
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    margin: 0;
+    /* Compensate for container padding */
+}
+
+.instagram-feed::-webkit-scrollbar {
+    display: none;
+}
+
+.instagram-feed .insta-item {
+    flex: 0 0 auto;
+    width: 16.6%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-feed .insta-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Overlay on Hover */
+.insta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(220, 53, 69, 0.9);
+    /* Crimsom overlay */
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.insta-overlay i {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.insta-overlay p {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Show Overlay on Hover */
+.insta-item:hover .insta-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.insta-item:hover img {
+    transform: scale(1.1); }
+
+
+
+        @media (max-width: 1200px) {
+            .instagram-feed .insta-item {
+                width: 100%;
+                /* 3 per row */
+            }
+        }
+    
+        @media (max-width: 992px) {
+            .instagram-feed .insta-item {
+                width: 33.33%;
+                /* 2 per row */
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .instagram-feed .insta-item {
+                width: 50%;
+                /* 2 per row */
+                height: 180px;
+                /* Even more compact */
+            }
+    
+            .insta-overlay i {
+                font-size: 24px;
+            }
+    
+            .insta-overlay p {
+                font-size: 12px;
+            }     }
+
+
+
+
+
+/* footer */
+.footer {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 20px 60px;
+background-color: #111;
+color: white;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+min-width: 150px;
+}
+
+.footer-left p {
+font-size: 0.9rem;
+margin: 0;
+color: #ccc;
+}
+
+.footer-left .fa-heart {
+color: crimson;
+margin-left: 5px;
+}
+
+.footer-center {
+text-align: center;
+}
+
+.footer-logo {
+width: 80px;
+}
+
+.footer-right {
+display: flex;
+justify-content: flex-end;
+gap: 25px;
+}
+
+.footer-right a {
+color: white;
+font-size: 1rem;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+color: crimson;             
+}
+
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left {
+        order: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-center {
+        order: 0;
+        margin-bottom: 20px;
+    }
+
+    .footer-right {
+        order: 2;
+        justify-content: center;
+        width: 100%;
+    } 
+}
+
+
+/* back to top */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    /* Hidden by default */
+    width: 40px;
+    height: 40px;
+    background-color: crimson;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    z-index: 9999;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top i {
+    vertical-align: middle;
+}
+
+.back-to-top.show {
+    display: block;
+    opacity: 1;
+    visibility: visible; 
+}
