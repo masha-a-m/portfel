@@ -83,85 +83,25 @@ document.querySelectorAll('.mobile-dropdown > a').forEach(link => {
 });
 
 
-
-
-// Hero section
+// Hero Slider
 const slides = [
   {
-    bg: 'images\hero.avif', // Replace with your actual image path
+    bg: 'images/hero.avif',
     hello: 'Hello',
     name: "I'm Masha",
-    text: "I photograph very instinctively. I see how it is taken like that I do not\ follow certain styles, philosophies or teachers.",
+    text: "I photograph very instinctively. I see how it is taken like that I do not follow certain styles, philosophies or teachers.",
     btnText: "Get a Quote",
     email: "hello.alime@gmail.com"
   },
   {
-    bg: 'images\hero1.avif', // Replace with your actual image path
+    bg: 'images/hero1.avif',
     hello: 'Hello',
     name: "I'm Daniel",
-    text: "I photograph very instinctively. I see how it is taken like that I do not\ follow certain styles, philosophies or teachers.",
+    text: "I follow no styles, just my instinct. I see how it is taken like that I do not follow certain styles, philosophies or teachers.",
     btnText: "Get a Quote",
     email: "daniel@example.com"
   }
 ];
-
-// let currentSlide = 0;
-
-// const slideBg = document.getElementById('slideBg');
-// const textContainer = document.getElementById('textContent');
-// const leftContainer = document.querySelector('.left-container');
-// const prevBtn = document.getElementById('prevBtn');
-// const nextBtn = document.getElementById('nextBtn');
-
-// function updateSlide(index, direction = 'next') {
-//   const slide = slides[index];
-
-//   // set bg
-//   slideBg.style.backgroundImage = `url('${slide.bg}')`;
-
-//   // Animate text container
-//   leftContainer.classList.remove('slide-in');
-
-//   if (direction === 'next') {
-//     leftContainer.classList.add('slide-out');
-//   } else {
-//     leftContainer.classList.add('slide-in-reverse');
-//   }
-
-//   setTimeout(() => {
-
-//     textContainer.innerHTML = `
-//       <h1>${slide.hello}</h1>
-//       <h2>${slide.name}</h2>
-//       <p>${slide.text.split('\n').join('<br>')}</p>
-//       <div class="btn-email">
-//         <button class="btn">${slide.btnText}</button>
-//         <a href="mailto:${slide.email}" class="email-link">${slide.email}</a>
-//       </div>
-//     `;
-
-//     leftContainer.classList.remove('slide-out', 'slide-in-reverse');
-//     void leftContainer.offsetWidth; // Trigger reflow
-//     leftContainer.classList.add('slide-in');
-
-//   })
-
-// }
-
-// prevBtn.addEventListener('click', () => {
-//   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-//   updateSlide(currentSlide);
-// });
-
-// nextBtn.addEventListener('click', () => {
-//   currentSlide = (currentSlide + 1) % slides.length;
-//   updateSlide(currentSlide);
-// });
-
-// // Initialize
-// updateSlide(currentSlide);
-
-
 
 let currentSlide = 0;
 
@@ -171,50 +111,84 @@ const leftContainer = document.querySelector('.left-container');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-function updateSlide(index, direction = 'next') {
+function updateSlide(index) {
   const slide = slides[index];
 
-  // Set background
-  slideBg.style.backgroundImage = `url('${slide.bg}')`;
+  // Update background
+  // if (slideBg) {
+  //   slideBg.style.backgroundImage = `url('${slide.bg}')`;
+  // }
 
-  // Animate text container
-  leftContainer.classList.remove('slide-in');
-
-  if (direction === 'next') {
-    leftContainer.classList.add('slide-out');
-  } else {
-    leftContainer.classList.add('slide-in-reverse');
+  if (slideBg && slide.bg) {
+    slideBg.style.backgroundImage = `url('${slide.bg}')`;
+    console.log("Setting background:", slide.bg);
   }
 
-  setTimeout(() => {
-    // Update content
+  // Update content
+  if (textContainer) {
     textContainer.innerHTML = `
-      <h1 class="hello-text">${slide.hello}</h1>
-      <h2 class="name-text">${slide.name}</h2>
-      <p>${slide.text.split('\n').join('<br>')}</p>
+      <h1>${slide.hello}</h1>
+      <h2>${slide.name}</h2>
+      <p>${slide.text}</p>
       <div class="btn-email">
         <button class="btn">${slide.btnText}</button>
         <a href="mailto:${slide.email}" class="email-link">${slide.email}</a>
       </div>
     `;
+  }
+}
 
-    // Reset animation
-    leftContainer.classList.remove('slide-out', 'slide-in-reverse');
-    void leftContainer.offsetWidth; // Trigger reflow
-    leftContainer.classList.add('slide-in');
-  }, 300);
+// Button Events
+if (prevBtn) {
+  prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlide(currentSlide);
+  });
+}
+
+if (nextBtn) {
+  nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlide(currentSlide);
+  });
 }
 
 // Initial load
 updateSlide(currentSlide);
 
-// Navigation buttons
-prevBtn.addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  updateSlide(currentSlide, 'prev');
-});
 
-nextBtn.addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  updateSlide(currentSlide, 'next');
+
+
+// filtering section
+const tabs = document.querySelectorAll('.tab');
+const items = document.querySelectorAll('.gallery-item');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const filter = tab.getAttribute('data-filter');
+
+    // Update active tab
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    // Animate gallery out
+    const gallery = document.querySelector('.gallery');
+    gallery.style.opacity = '0';
+    gallery.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+      // Hide or show items
+      items.forEach(item => {
+        if (item.classList.contains(filter) || filter === 'all') {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Fade back in
+      gallery.style.opacity = '1';
+      gallery.style.pointerEvents = 'auto';
+    }, 300);
+  });
 });

@@ -12,11 +12,11 @@ body {
 
 /* Fullscreen Background Image */
 .hero-section {
-    background-image: url('/images/hero.avif');
+    /* background-image: url('/images/hero.avif'); */
     /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+    /* background-size: cover;
+    background-position: center; */
+    /* height: 100vh; */
     position: relative;
     color: white;
     
@@ -363,15 +363,15 @@ body {
 }
 
 .slider-wrapper{
-    .slider-wrapper {
             width: 100%;
             max-width: 1200px;
             padding: 0 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 2;     }
+            z-index: 2;     
 }
+
 /* Background Image */
 .slide-bg {
     position: absolute;
@@ -397,7 +397,7 @@ body {
 }
 
 .text-container h1 {
-    font-size: 6rem;
+    font-size: 5rem;
     margin-bottom: 10px;
 }
 
@@ -407,43 +407,33 @@ body {
     
 }
 .text-container h2 {
-    font-size: 6rem;
+    font-size: 3.5rem;
     margin-bottom: 10px;
 }
 
 .text-container p {
     font-size: 1.1rem;
+    width: 600px;
     margin-bottom: 20px;
     line-height: 30px;
 }
 
-/* Gradient Text Styling */
-
-.hello-text {
-    font-weight: 900;
-    margin-bottom: 10px;
-    background-image: linear-gradient(to bottom, #fc8931, #ffb57c);
-    /* Dark Orange */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.name-text {
-    font-weight: 700;
-    margin-bottom: 20px;
-    background-image: linear-gradient(to bottom, #fdc775, #ff8a00);
-    /* Lighter Orange */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
 
 /* Add class for sliding */
+.left-container {
+    transition: transform 0.6s ease-in-out;
+}
+
 .left-container.slide-out {
     transform: translateX(-100%);
 }
 
+.left-container.slide-in-reverse {
+    transform: translateX(100%);
+}
+
 .left-container.slide-in {
     transform: translateX(0); }
-
     
 .text-container .btn-email {
     display: flex;
@@ -507,3 +497,147 @@ body {
 .next:hover {
     background-color: crimson;   
 }
+
+/* Gradient Text Styling */
+
+.hello-text {
+    font-weight: 900;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to bottom, #fc8931, #ffb57c);
+    /* Dark Orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name-text {
+    font-weight: 700;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to bottom, #fdc775, #ff8a00);
+    /* Lighter Orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slide-bg {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    
+}
+
+
+
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 120px 0 70px 0;
+    position: relative;
+}
+
+.tab {
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding-bottom: 8px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab.active::after,
+.tab:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: crimson;
+}
+
+
+.gallery {
+    column-count: 4;
+    column-gap: 20px;
+    transition: opacity 0.4s ease;
+    padding: 0 150px;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease; }
+
+.image-wrapper img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+
+/* Overlay on Hover */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.icon {
+    display: inline-block;
+    color: white;
+    font-size: 24px;
+    background-color: crimson;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+/* Show overlay on hover */
+.image-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+/* View More Button */
+.view-more-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.view-more-btn {
+    padding: 12px 30px;
+    background-color: white;
+    color: crimson;
+    border: 2px solid crimson;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: crimson;
+    color: white; }
