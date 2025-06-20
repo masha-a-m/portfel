@@ -76,18 +76,18 @@
                 <li class="mobile-dropdown">
                     <a href="#">Pages ▾</a>
                     <ul class="mobile-dropdown-menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Blog Details</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" class="has-dropdown">Home</a></li>
+                        <li><a href="#" class="has-dropdown">About</a></li>
+                        <li><a href="#" class="has-dropdown">Gallery</a></li>
+                        <li><a href="#" class="has-dropdown">Blog Details</a></li>
+                        <li><a href="#" class="has-dropdown">Contact</a></li>
                         <li class="mobile-nested-dropdown">
-                            <a href="#">Dropdown ➤</a>
+                            <a href="#">Dropdown ▾</a>
                             <ul class="mobile-nested-dropdown-menu">
-                                <li><a href="#">Dropdown Item 1</a></li>
-                                <li><a href="#">Dropdown Item 2</a></li>
-                                <li><a href="#">Dropdown Item 3</a></li>
-                                <li><a href="#">Dropdown Item 4</a></li>
+                                <li><a href="#" class="has-dropdown">Dropdown Item 1</a></li>
+                                <li><a href="#" class="has-dropdown">Dropdown Item 2</a></li>
+                                <li><a href="#" class="has-dropdown">Dropdown Item 3</a></li>
+                                <li><a href="#" class="has-dropdown">Dropdown Item 4</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -97,12 +97,26 @@
         </div>
 
 </nav>
+
+<section class="slider-section">
+    <!-- Background Images -->
+    <div class="slide-bg" id="slideBg"></div>
+  
+    <!-- Content Container -->
+    <div class="slider-content">
+      <div class="text-container" id="textContent">
+        <!-- Dynamic content will be injected here -->
+      </div>
+  
+      <!-- Arrow Navigation -->
+      <button class="nav-btn prev" id="prevBtn">&#8592;</button>
+      <button class="nav-btn next" id="nextBtn">&#8594;</button>
+    </div>
+  </section>
 </section>
 
 
-
 <script src="assets/script.js"></script>
-
 
 </body>
 </html>
