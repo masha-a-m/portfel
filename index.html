@@ -4,8 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alime - Photography</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-    
+<body>    
+<!-- Overlay Search -->
+<div class="search-overlay">
+    <div class="search">
+        <span class="close-btn" id="closeSearch">×</span>
+    <input type="text" placeholder="Search..." class="search-input" />
+    <button class="search-btn">
+        SEARCH
+    </button>
+</div>
+</div>
+<section class="hero-section">
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo"><img src="images/logo.png (1).webp" alt="Logo" /></div>
+
+    <ul class="nav-links desktop-links">
+        <li><a href="#" class="active">Home</a></li>
+        <!-- Dropdown Menu -->
+        <li class="dropdown pages">
+            <a href="#">Pages ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Blog Details</a></li>
+                <li><a href="#">Contact</a></li>
+
+                <!-- Nested Dropdown -->
+                <li class="nested-dropdown">
+                    <a href="#">Dropdown ➤</a>
+                    <ul class="nested-dropdown-menu">
+                        <li><a href="#">Dropdown Item 1</a></li>
+                        <li><a href="#">Dropdown Item 2</a></li>
+                        <li><a href="#">Dropdown Item 3</a></li>
+                        <li><a href="#">Dropdown Item 4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+
+        <!-- Search Icon -->
+        <div class="search-icon" id="searchIcon">
+            <i class="fas fa-search"></i>
+        </div>
+    </ul>
+
+    <!-- Mobile Hamburger -->
+    <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="overlay-content">
+            <span class="close-btn" id="closeOverlay">&times;</span>
+            <ul class="mobile-nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Pages ▾</a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Blog Details</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li class="mobile-nested-dropdown">
+                            <a href="#">Dropdown ➤</a>
+                            <ul class="mobile-nested-dropdown-menu">
+                                <li><a href="#">Dropdown Item 1</a></li>
+                                <li><a href="#">Dropdown Item 2</a></li>
+                                <li><a href="#">Dropdown Item 3</a></li>
+                                <li><a href="#">Dropdown Item 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+
+</nav>
+</section>
+
+
+
+<script src="assets/script.js"></script>
+
+
 </body>
 </html>
