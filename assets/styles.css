@@ -524,11 +524,76 @@ body {
     background-size: cover;
 }
 
+
+
+/* MOBILE LAYOUT */
+/* MOBILE LAYOUT */
 @media (max-width: 768px) {
-    
-}
+    .slider-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
 
+    .left-container {
+        max-width: 100%;
+        text-align: center;
+        flex: 1;
+        order: 1;
+    }
 
+    .text-container {
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .text-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-container h2 {
+        font-size: 2rem;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+        line-height: 24px;
+    }
+
+    .btn-email {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn,
+    .email-link {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .prev {
+        left: 20px;
+    }
+
+    .next {
+        right: 20px;
+    }
+
+    /* Optional: Make sure content doesn't go under buttons */
+    .text-container {
+        z-index: 2;
+    } }
 
 
 /* Filter Tabs */
@@ -641,3 +706,64 @@ body {
 .view-more-btn:hover {
     background-color: crimson;
     color: white; }
+
+
+/* RESPONSIVE FILTER TABS */
+@media (max-width: 768px) {
+    .filter-tabs {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 60px 0 40px 0;
+    }
+
+    .tab {
+        font-size: 1rem;
+        padding-bottom: 4px;
+    } }
+
+
+/* RESPONSIVE GALLERY */
+@media (max-width: 1200px) {
+    .gallery {
+        column-count: 3;
+        padding: 0 80px;
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery {
+        column-count: 2;
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery {
+        column-count: 1;
+        padding: 0 20px;
+    } }
+
+
+/* RESPONSIVE IMAGE HOVER EFFECT */
+@media (max-width: 768px) {
+    .icon {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .image-wrapper:hover img {
+        transform: scale(1.05);
+    } }
+
+/* RESPONSIVE VIEW MORE BUTTON */
+@media (max-width: 768px) {
+    .view-more-btn {
+        padding: 10px 20px;
+        font-size: 12px;
+    } }
