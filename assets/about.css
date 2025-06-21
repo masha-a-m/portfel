@@ -419,7 +419,58 @@ body {
 
 
 
+/* about hero */
+/* Hero Section */
+.about-hero-section{
+    background: url('/images/photo-1626861932319-06d1b0e85dc1.avif') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+.about-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: red;
+}
 
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb .home-icon {
+    font-size: 16px;
+}
+
+.breadcrumb .current-page {
+    color: crimson;
+}
+
+/* Hover effect */
+.breadcrumb a:hover,
+.breadcrumb a:focus {
+    color: crimson; 
+}
 
 
 
