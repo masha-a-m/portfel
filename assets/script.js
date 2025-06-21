@@ -215,6 +215,35 @@ tabs.forEach(tab => {
 
 
 
+
+// why choose us section
+
+document.addEventListener("DOMContentLoaded", function () {
+  const chooseSection = document.getElementById('chooseUs');
+  const sectionTitle = chooseSection.querySelector('.section-title');
+  const cardsContainer = document.querySelector('.cards-container');
+
+
+  function checkScroll() {
+    const sectionPosition = chooseSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight;
+
+    if (sectionPosition < screenPosition && sectionPosition + 100 > 0) {
+      sectionTitle.classList.add('animate');
+      cardsContainer.classList.add('animate');
+
+     
+    }
+  }
+
+  window.addEventListener('load', checkScroll);
+  window.addEventListener('scroll', checkScroll);
+});
+
+
+
+
+
 // back to top
 document.addEventListener("DOMContentLoaded", function () {
   const backToTop = document.getElementById('backToTop');

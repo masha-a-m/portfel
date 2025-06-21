@@ -924,35 +924,36 @@ body {
 
 
 
-        @media (max-width: 1200px) {
-            .instagram-feed .insta-item {
-                width: 100%;
-                /* 3 per row */
-            }
-        }
-    
-        @media (max-width: 992px) {
-            .instagram-feed .insta-item {
-                width: 33.33%;
-                /* 2 per row */
-            }
-        }
-    
-        @media (max-width: 768px) {
-            .instagram-feed .insta-item {
-                width: 50%;
-                /* 2 per row */
-                height: 180px;
-                /* Even more compact */
-            }
-    
-            .insta-overlay i {
-                font-size: 24px;
-            }
-    
-            .insta-overlay p {
-                font-size: 12px;
-            }     }
+@media (max-width: 1200px) {
+    .instagram-feed .insta-item {
+        width: 100%;
+        /* 3 per row */
+    }
+}
+
+@media (max-width: 992px) {
+    .instagram-feed .insta-item {
+        width: 33.33%;
+        /* 2 per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .instagram-feed .insta-item {
+        width: 50%;
+        /* 2 per row */
+        height: 180px;
+        /* Even more compact */
+    }
+
+    .insta-overlay i {
+        font-size: 24px;
+    }
+
+    .insta-overlay p {
+        font-size: 12px;
+    }     
+}
 
 
 
