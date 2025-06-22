@@ -531,6 +531,16 @@ body {
     transition: transform 0.3s ease;
 }
 
+.image-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /* Or 1/1 for square */
+    overflow: hidden;
+    border-radius: 8px; 
+}
+
 .image-wrapper img {
     width: 100%;
     display: block;

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masha - Photography</title>
+    <link rel="stylesheet" href="assets/blog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader" id="pageLoader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <!-- Overlay Search -->
+    <div class="search-overlay">
+        <div class="search">
+            <span class="close-btn" id="closeSearch">×</span>
+            <input type="text" placeholder="Search..." class="search-input" />
+            <button class="search-btn">
+                SEARCH
+            </button>
+        </div>
+    </div>
+
+    <section class="hero-section about-hero-section">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo"><img src="images/logo.png (1).webp" alt="Logo" /></div>
+
+            <ul class="nav-links desktop-links">
+                <li><a href="index.html">Home</a></li>
+                <!-- Dropdown Menu -->
+                <li class="dropdown pages">
+                    <a href="#">Pages ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog-details.html">Blog Details</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                        <!-- Nested Dropdown -->
+                        <li class="nested-dropdown">
+                            <a href="#">Dropdown ➤</a>
+                            <ul class="nested-dropdown-menu">
+                                <li><a href="#">Dropdown Item 1</a></li>
+                                <li><a href="#">Dropdown Item 2</a></li>
+                                <li><a href="#">Dropdown Item 3</a></li>
+                                <li><a href="#">Dropdown Item 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+                <!-- Search Icon -->
+                <div class="search-icon" id="searchIcon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </ul>
+
+            <!-- Mobile Hamburger -->
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <!-- Mobile Overlay Menu -->
+            <div class="mobile-overlay" id="mobileOverlay">
+                <div class="overlay-content">
+                    <span class="close-btn" id="closeOverlay">&times;</span>
+                    <ul class="mobile-nav-links">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li class="mobile-dropdown">
+                            <a href="#">Pages ▾</a>
+                            <ul class="mobile-dropdown-menu">
+                                <li><a href="#" class="has-dropdown">Home</a></li>
+                                <li><a href="#" class="has-dropdown">About</a></li>
+                                <li><a href="#" class="has-dropdown">Gallery</a></li>
+                                <li><a href="#" class="has-dropdown">Blog Details</a></li>
+                                <li><a href="#" class="has-dropdown">Contact</a></li>
+                                <li class="mobile-nested-dropdown">
+                                    <a href="#">Dropdown ▾</a>
+                                    <ul class="mobile-nested-dropdown-menu">
+                                        <li><a href="#" class="has-dropdown">Dropdown Item 1</a></li>
+                                        <li><a href="#" class="has-dropdown">Dropdown Item 2</a></li>
+                                        <li><a href="#" class="has-dropdown">Dropdown Item 3</a></li>
+                                        <li><a href="#" class="has-dropdown">Dropdown Item 4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="hero-content">
+                <h1>Latest Blog</h1>
+
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">
+                    <a href="index.html"><i class="fas fa-home home-icon"></i> Home</a>
+                    <span class="separator">></span>
+                    <span class="current-page">Blog</span>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+
+    
+
+
+
+
+
+    <!-- Instagram Section -->
+    <section class="instagram-section">
+        <h2 class="insta-title">Follow Instagram</h2>
+        <p class="insta-handle">@masha_photographer</p>
+
+        <!-- Instagram Feed -->
+        <div class="instagram-feed" id="instagramFeed">
+            <div class="insta-item">
+                <img src="images/insta.webp" alt="Instagram Post 1" />
+                <div class="insta-overlay">
+                    <i class="fab fa-instagram"></i>
+                    <p>@masha_photographer</p>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="images/insta2.webp" alt="Instagram Post 2" />
+                <div class="insta-overlay">
+                    <i class="fab fa-instagram"></i>
+                    <p>@masha_photographer</p>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="images/insta3.webp" alt="Instagram Post 2" />
+                <div class="insta-overlay">
+                    <i class="fab fa-instagram"></i>
+                    <p>@masha_photographer</p>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="images/insta4.webp" alt="Instagram Post 2" />
+                <div class="insta-overlay">
+                    <i class="fab fa-instagram"></i>
+                    <p>@masha_photographer</p>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="images/insta5.webp" alt="Instagram Post 2" />
+                <div class="insta-overlay">
+                    <i class="fab fa-instagram"></i>
+                    <p>@masha_photographer</p>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="images/insta6.webp" alt="Instagram Post 2" />
+                <div class="insta-overlay">
+                    <i class="fab fa-instagram"></i>
+                    <p>@masha_photographer</p>
+                </div>
+            </div>
+            <!-- Repeat for more images -->
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>Copyright ©2025 All rights reserved | Made by Masha <i class="fas fa-heart"></i></p>
+        </div>
+
+        <div class="footer-center">
+            <img src="images/logo.png (1).webp" alt="Logo" class="footer-logo">
+        </div>
+
+        <div class="footer-right">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="assets/script.js"></script>
+
+</body>
+
+</html>
