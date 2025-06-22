@@ -214,6 +214,26 @@ tabs.forEach(tab => {
 });
 
 
+// instagram feed section auto scroll
+  const feed = document.getElementById('instagramFeed');
+
+  let scrollAmount = 0;
+
+  setInterval(() => {
+    const cardWidth = document.querySelector('.insta-item')?.offsetWidth + 10 || 220;
+    
+    if (feed.scrollLeft + feed.clientWidth >= feed.scrollWidth) {
+      feed.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      feed.scrollBy({
+        left: cardWidth,
+        behavior: 'smooth'
+      });
+    }
+  }, 3000); // Scrolls every 3 seconds
+
+
+
 
 
 // why choose us section
